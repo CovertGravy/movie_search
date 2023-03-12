@@ -29,7 +29,9 @@ input.addEventListener("keyup", async (e) => {
       list_box.innerHTML += `<li><span><i>NO RESULTS FOUND!</i></span></li>`;
     } else {
       for (let i = 0; i < found_items.length; i++) {
-        list_box.innerHTML += `<li><span><img src = '${found_items[i].cover}'><b><i>${found_items[i].year}</i></b></span><span>${found_items[i].title}</span></li>`;
+        setTimeout(() => {
+          list_box.innerHTML += `<li class="animate__animated animate__bounce"><span><img src = '${found_items[i].cover}'><b><i>${found_items[i].year}</i></b></span><span>${found_items[i].title}</span></li>`;
+        }, 2000);
       }
     }
   }
