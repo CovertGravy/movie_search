@@ -29,6 +29,7 @@ input.addEventListener("input", (e) => {
         list_box.innerHTML += `<li><i>NO RESULTS FOUND!</i></li>`;
       } else {
         for (let i = 0; i < found_items.length; i++) {
+          list_box.style.display = "block";
           list_box.innerHTML += `
           <li>
           <img src = '${found_items[i].cover}'>${found_items[i].title} (${found_items[i].year})
