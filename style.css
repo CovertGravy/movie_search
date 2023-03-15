@@ -1,16 +1,30 @@
-li {
-  padding: 10px 0px;
-  padding-left: 40px;
+.container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
-span:nth-child(2) {
-  padding-left: 40px;
+input[type="text"] {
+  padding: 10px;
+  border-radius: 4px;
 }
+
 img {
-  padding-right: 40px;
+  padding-right: 10px;
 }
 
-li:nth-child(even) {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity));
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 10px 0px;
+  margin-top: 5px;
+  background-color: #25373d;
+  font-family: Arial;
+  color: white;
+  width: 300px;
+  white-space: normal;
+}
+li {
+  display: flex;
+  align-items: center;
 }
