@@ -5,7 +5,6 @@ const mov_obj = "https://yts.mx/api/v2/list_movies.json?sort_by=year&limit=50";
 input.addEventListener("input", (e) => {
   if (input.value == "") {
     list_box.innerHTML = "";
-    console.log("did it wokr");
   } else {
     setTimeout(async () => {
       const usr_input = input.value.toLowerCase();
@@ -30,12 +29,9 @@ input.addEventListener("input", (e) => {
       } else {
         for (let i = 0; i < found_items.length; i++) {
           list_box.style.display = "block";
-          list_box.innerHTML += `
-          <li>
-          <img src = '${found_items[i].cover}'>${found_items[i].title} (${found_items[i].year})
-          </li>`;
+          list_box.innerHTML += `<li><img src = '${found_items[i].cover}'>${found_items[i].title} (${found_items[i].year})</li>`;
         }
       }
-    }, 1000);
+    }, 40);
   }
 });

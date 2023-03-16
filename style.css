@@ -1,12 +1,20 @@
 .container {
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
-  font-family: Arial;
+  font-family: Poppins;
+  width: 300px;
+  height: 300px;
 }
 
 input[type="text"] {
   padding: 10px;
+  background-color: #1d2324;
+  color: #fffff7;
+  border: none;
+}
+
+input[type="text"]:focus {
+  border: none;
 }
 
 img {
@@ -16,13 +24,18 @@ img {
 ul {
   list-style-type: none;
   margin: 0px;
-  padding: 10px 0px;
-  margin-top: 5px;
-  width: 300px;
-  white-space: normal;
+  padding: 0px;
   display: none;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #777 #555;
 }
+
 li {
   display: flex;
   align-items: center;
+  padding-right: 5px;
+  background-color: #1d2324;
+  color: #fffff7;
+  font-size: small;
 }
