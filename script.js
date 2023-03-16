@@ -2,36 +2,20 @@ const input = document.querySelector("input");
 const list_box = document.querySelector(".list-box");
 const mov_obj = "https://yts.mx/api/v2/list_movies.json?sort_by=year&limit=50";
 
-input.addEventListener("input", (e) => {
-  if (input.value == "") {
+input.addEventListener("input", () => {
+  if (input.value == "" || input.value) {
     list_box.innerHTML = "";
-  } else {
-    setTimeout(async () => {
-      const usr_input = input.value.toLowerCase();
-      const result = await fetch(mov_obj).then((res) => {
-        return res.json();
-      });
-      let found_items = [],
-        j = 0;
-      for (let i of result.data.movies) {
-        if (i.title.toLowerCase().includes(usr_input)) {
-          found_items[j] = {
-            title: i.title,
-            year: i.year,
-            cover: i.small_cover_image,
-          };
-          j++;
-        }
-      }
-      list_box.innerHTML = "";
-      if (found_items.length == 0) {
-        list_box.innerHTML += `<li><i>NO RESULTS FOUND!</i></li>`;
-      } else {
-        for (let i = 0; i < found_items.length; i++) {
-          list_box.style.display = "block";
-          list_box.innerHTML += `<li><img src = '${found_items[i].cover}'>${found_items[i].title} (${found_items[i].year})</li>`;
-        }
-      }
-    }, 40);
   }
+  setTimeout(async () => {
+    const usr_input = input.value.toLowerCase();
+    const result = await fetch(mov_obj).then((res) => {
+      return res.json();
+    });
+    result.data.movies.forEach((element) => {
+      if (element.title.toLowerCase().includes(usr_input)) {
+        list_box.innerHTML += `<li><img src = '${element.small_cover_image}'>${element.title} (${element.year})</li>`;
+      }
+    });
+    list_box.style.display = "block";
+  }, 0);
 });
