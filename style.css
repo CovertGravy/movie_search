@@ -11,10 +11,12 @@ input[type="text"] {
   background-color: #1d2324;
   color: #fffff7;
   border: none;
+  transition: border 0.2s;
 }
 
 input[type="text"]:focus {
-  border: none;
+  outline: none;
+  border-bottom: 3px solid #64ddbb;
 }
 
 img {
